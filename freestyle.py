@@ -53,22 +53,14 @@ cards = {
     "AS":14,
 }
 
-
 import random
 computer = random.choice(cards.keys())
 you = random.choice(cards.keys())
 
-
-
+print("------------------------")
 print("Computer: " + computer)
 print("You: " + you)
-
-computer_game_wins = 0
-your_game_wins = 0
-ties = 0
-
-
-
+print("------------------------")
 
 
 if (computer > you):
@@ -78,17 +70,25 @@ elif (computer == you):
 else:
     print("You Win!")
 
+print("------------------------")
 
+computer_game_wins = 0
+your_game_wins = 0
+ties = 0
 
 for i in cards:
     if computer > you:
-        computer_game_wins = computer_game_wins + 5
+        computer_game_wins = computer_game_wins + 1
     if you > computer:
-        your_game_wins = your_game_wins + 6
+        your_game_wins = your_game_wins + 1
     if computer == you:
-        ties = ties + 7
+        ties = ties + 1
+    if computer_game_wins + your_game_wins + ties == 26:
+        print("Game Over")
 
 print("Number of Computer Wins:" + str(computer_game_wins))
 print("Number of Your Wins:" + str(your_game_wins))
 print("Number of Ties:" + str(ties))
+print("------------------------")
 print("Total Games Played:" + str(computer_game_wins + your_game_wins + ties))
+print("------------------------")
